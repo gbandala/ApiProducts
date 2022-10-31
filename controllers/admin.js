@@ -45,7 +45,7 @@ const getCartById= (req,res)=>{
     {
         console.log('apikey>',req.query.apikey);
         console.log('userId>',req.params.userId);
-        Cart.find({id:req.params.userId}, { _id: 0 }, function (err, doc) {
+        Cart.find({id:req.params.userId}, { _id: 0, id: 0 }, function (err, doc) {
             if (err) {
                 console.error(err.message);
                 res.status(400).send("Error");
